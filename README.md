@@ -4,7 +4,7 @@
 前没有系统学习过人工智能或深度学习，因此每一章都从最基础的概念讲起，遇到公式和代码会先解释“它到
 底在算什么”，再给出可运行、可检查的示例。
 
-本书的创作合理运用了Agent工具，主要采取Workbuddy+Dumate .
+本书的创作合理运用了Agent工具，主要使用Workbuddy+Dumate .
 
 参考资源
 - LMCC IDE 使用教程：https://jy.hpe.cn/jhkx/jsxx/706058.htm
