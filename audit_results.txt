@@ -1,0 +1,45 @@
+=== Chapter 1 H3s under section 1.4 ===
+  1.4.3 大模型现状：国际主流与国内发展 (line 404)
+  1.4.4 2026 年中前沿速览 (line 412)
+
+======================================================================
+STRUCTURAL AUDIT RESULTS
+======================================================================
+
+Total issues found: 9
+Orphan figures (no preceding h3 within 50 lines): 14
+
+--- ISSUES BY CHAPTER ---
+
+Chapter 1:
+  [MISSING_H3] Line 0: '1.4.1'
+      -> Missing H3 heading 1.4.1 in Chapter 1 section 1.4
+  [MISSING_H3] Line 0: '1.4.2'
+      -> Missing H3 heading 1.4.2 in Chapter 1 section 1.4
+
+Chapter 3:
+  [NEARLY_EMPTY] Line 3462: '3.4 参数量怎么算'
+      -> Nearly empty section (135 chars) between 3.4 参数量怎么算 and next h2
+
+Chapter 4:
+  [NEARLY_EMPTY] Line 5910: '4.3 监督微调（SFT）'
+      -> Nearly empty section (74 chars) between 4.3 监督微调（SFT） and next h2
+
+Chapter 6:
+  [NEARLY_EMPTY] Line 9123: '6.5 RAG 的两段式评测'
+      -> Nearly empty section (151 chars) between 6.5 RAG 的两段式评测 and next h2
+
+Chapter 7:
+  [NEARLY_EMPTY] Line 9422: '7.4 论文阅读标注法（R/M/D/E/L）'
+      -> Nearly empty section (143 chars) between 7.4 论文阅读标注法（R/M/D/E/L） and next h2
+
+Chapter 8:
+  [NEARLY_EMPTY] Line 9713: '8.2 分类评测：混淆矩阵'
+      -> Nearly empty section (127 chars) between 8.2 分类评测：混淆矩阵 and next h2
+  [NEARLY_EMPTY] Line 9836: '8.10 公平性与时效性'
+      -> Nearly empty section (175 chars) between 8.10 公平性与时效性 and next h2
+  [NEARLY_EMPTY] Line 9839: '8.11 评测范式：公开与隐藏、格式与字段'
+      -> Nearly empty section (194 chars) between 8.11 评测范式：公开与隐藏、格式与字段 and next h2
+
+--- ORPHAN FIGURES (14 total) ---
+  Lines: [264, 801, 5692, 6069, 8744, 9055, 9344, 9676, 9856, 10016, 10473, 10643, 10647, 10733]
