@@ -12,3 +12,5 @@
 - CCF 中小学大模型教育提纲：https://lmcc.ccf.org.cn/101/1010/10261.html
 - CCF 大模型能力认证大纲：https://lmcc.ccf.org.cn/101/1002/10080.html
 - 2026年敬业中学同济大学暑期夏令营选拔活动LMCC大模型能力操作细则：https://jy.hpe.cn/jhkx/jsxx/706058.htm
+- 首次LMCC青少年组交流活动试题分析：https://lmcc.ccf.org.cn/101/1002/10248.html
+- 首次LMCC试题解析及第二轮代码下载:https://lmcc.ccf.org.cn/101/1002/10195.html
