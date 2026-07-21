@@ -1,0 +1,21 @@
+=== 示例：JSON 提取三重兜底策略 ===
+
+测试: 标准JSON
+  输入: {"question": "1+1=?", "answer": "B"}
+  提取: {'question': '1+1=?', 'answer': 'B'}
+
+测试: 带代码块
+  输入: ```json
+{"question": "2+2=?", "answer": "C"}
+```
+  提取: {'question': '2+2=?', 'answer': 'C'}
+
+测试: 带前缀
+  输入: 好的，结果是：{"question": "3+3=?", "answer": "D"}
+  提取: {'question': '3+3=?', 'answer': 'D'}
+
+测试: 嵌套Answer
+  输入: [Answer]: D
+  提取: {'answer': 'D'}
+
+策略: 1.直接解析 -> 2.代码块提取 -> 3.首尾大括号 -> 4.[Answer]模式

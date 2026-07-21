@@ -1,0 +1,18 @@
+=== 示例：NDCG@5 计算 ===
+相关性分数: [3, 2, 0, 1, 0]
+理想排序:   [3, 2, 1, 0, 0]
+
+DCG 计算:
+  位置 1: rel=3, gain=2^3-1=7, log2(2)=1.000, contribution=7.0000
+  位置 2: rel=2, gain=2^2-1=3, log2(3)=1.585, contribution=1.8928
+  位置 3: rel=0, gain=2^0-1=0, log2(4)=2.000, contribution=0.0000
+  位置 4: rel=1, gain=2^1-1=1, log2(5)=2.322, contribution=0.4307
+  位置 5: rel=0, gain=2^0-1=0, log2(6)=2.585, contribution=0.0000
+  DCG = 9.3235
+
+IDCG 计算 (理想排序):
+  IDCG = 9.3928
+
+NDCG = DCG / IDCG = 9.3235 / 9.3928 = 0.9926
+
+答案: C (NDCG ≈ 0.99)
