@@ -2,7 +2,7 @@
 
 本书面向准备参加LMCC 大模型能力认证的学生与成人学习者。青少年组考生适用年龄大致在 8–18 岁，成人组考生无年龄限制。全书覆盖 CCF 大模型能力认证大纲全部 12 个模块、3 个难度等级的知识点：【1】级（基础级）和【2】级（进阶级）为青少年组与成人组共考内容，【3】级（高级）为成人组专属——正文中对成人组专属内容会以醒目方式标注，青少年组考生可按需选读。我们假设你此前没有系统学习过人工智能或深度学习，因此每一章都从最基础的概念讲起，遇到公式和代码会先解释"它到底在算什么"，再给出可运行、可检查的示例。
 
-本书的创作合理运用了Agent工具，主要使用Workbuddy+Dumate .
+本书的创作合理运用了AI Agent工具，主要使用Workbuddy+Dumate .
 
 参考资源
 - LMCC IDE 使用教程：https://jy.hpe.cn/jhkx/jsxx/706058.htm
@@ -12,6 +12,8 @@
 - 2026年敬业中学同济大学暑期夏令营选拔活动LMCC大模型能力操作细则：https://jy.hpe.cn/jhkx/jsxx/706058.htm
 - 首次LMCC青少年组交流活动试题分析：https://lmcc.ccf.org.cn/101/1002/10248.html
 - 首次LMCC试题解析及第二轮代码下载:https://lmcc.ccf.org.cn/101/1002/10195.html
+- 2026 LMCC青少年组第一轮认证试题分析  https://lmcc.ccf.org.cn/101/1018/10344.html
+- 2026 LMCC第二轮认证例题 https://lmcc.ccf.org.cn/101/1002/10346.html
 
 ## 仓库内容
 
@@ -53,3 +55,5 @@
 13. `render_enhanced.py`：用 Playwright 将增强版 HTML 渲染为 A4 PDF
 
 **运行依赖**：Python 3.10+；`matplotlib`（出图）、`playwright`（PDF 渲染，需 `playwright install chromium`）、KaTeX 本地资源（`work/katex/`）。因 `build_book.py` 输出路径为 `LMCC青少年组教材.html`，而复现增强管线统一操作 `LMCC青少年组教材-增强版.html`，首次复现请先执行一次复制再进入第 3 步。
+
+
