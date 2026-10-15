@@ -4,7 +4,43 @@
 
 本书的创作合理运用了AI Agent工具，主要使用Workbuddy+Dumate .
 
-参考资源
+## 引用本书
+
+若在论文、报告或课程材料中引用本教材或配套工程，请采用以下格式（APA 7th 与 BibTeX）。作者 ORCID：0009-0001-2763-8317。
+
+**教材（Zenodo 归档版，推荐）**
+
+Cheng, C. (2026, October 15). *LMCC人工智能与大模型能力认证教材*. Zenodo. https://doi.org/10.5281/zenodo.23384442
+
+```bibtex
+@misc{Cheng2026LMCC,
+  author       = {Cheng, Chi},
+  title        = {{LMCC} 人工智能与大模型能力认证教材},
+  year         = {2026},
+  month        = {10},
+  day          = {15},
+  howpublished = {Zenodo},
+  doi          = {10.5281/zenodo.23384442},
+  url          = {https://doi.org/10.5281/zenodo.23384442}
+}
+```
+
+**配套工程与题库（GitHub 仓库）**
+
+Cheng, C. (2026). *LMCC-Tutorial* [Source code]. GitHub. https://github.com/cc200723/LMCC-Tutorial
+
+```bibtex
+@misc{Cheng2026LMCCGitHub,
+  author       = {Cheng, Chi},
+  title        = {{LMCC-Tutorial}: {LMCC} 大模型能力认证教材配套工程与题库},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  publisher    = {GitHub},
+  url          = {https://github.com/cc200723/LMCC-Tutorial}
+}
+```
+
+### 参考资源
 - LMCC IDE 使用教程：https://jy.hpe.cn/jhkx/jsxx/706058.htm
 - LMCC IDE 学习仓库（Gitee）：https://gitee.com/lmcc-ide/learn
 - CCF 中小学大模型教育提纲：https://lmcc.ccf.org.cn/101/1010/10261.html
