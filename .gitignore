@@ -1,0 +1,7 @@
+# Python 缓存
+__pycache__/
+*.py[cod]
+
+# 构建中间产物（保留源码管线，不入版本库）
+.review/work/work/unused/
+.review/tmp/

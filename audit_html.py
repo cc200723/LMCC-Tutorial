@@ -1,7 +1,8 @@
 import re
 from collections import defaultdict
+from pathlib import Path
 
-path = r'C:\Users\MINXIN\Desktop\CCF LMCC\LMCC青少年组教材-增强版.html'
+path = str(Path(__file__).resolve().parent / 'LMCC青少年组教材-增强版.html')
 with open(path, 'r', encoding='utf-8') as f:
     content = f.read()
 
@@ -144,17 +145,29 @@ for ch_name, ch_h in chapters:
             })
 
 # 3. Check orphan figures
+# 上下文标题取 figure 之前的最近 h2/h3/h4（含本小节标题），而非只认 h3：
+# 教材正文中大量插图紧跟段落正文、位于 h2/h3 小节内部，仅向前 50 行找 h3 会误报。
 figure_positions = []
 for i, line in enumerate(lines):
     if '<figure' in line:
-        nearest_h3 = None
-        for j in range(i-1, max(i-50, -1), -1):
-            for m in re.finditer(r'<h3[^>]*>(.*?)</h3>', lines[j], re.DOTALL):
-                nearest_h3 = re.sub(r'<[^>]+>', '', m.group(1)).strip()
+        nearest_heading = None
+        for j in range(i - 1, max(i - 200, -1), -1):
+            for m in re.finditer(r'<(h[234])[^>]*>(.*?)</\1>', lines[j], re.DOTALL):
+                nearest_heading = re.sub(r'<[^>]+>', '', m.group(2)).strip()
                 break
-            if nearest_h3:
+            if nearest_heading:
                 break
-        figure_positions.append((i+1, nearest_h3))
+        # 无标题上下文时，若图带 figcaption 且前文有正文引用（如图 3-4 所示），仍视为有效插图
+        if not nearest_heading:
+            fig_block = '\n'.join(lines[i:i + 64])
+            cap_m = re.search(r'<figcaption>图\s*([\d\.\-]+)', fig_block)
+            if cap_m:
+                ref_pat = re.compile(r'图\s*' + re.escape(cap_m.group(1)) + r'[」”]?所示')
+                for j in range(i - 1, max(i - 8, -1), -1):
+                    if ref_pat.search(lines[j]):
+                        nearest_heading = '(' + cap_m.group(1) + ')'
+                        break
+        figure_positions.append((i + 1, nearest_heading))
 
 orphan_figures = [fp[0] for fp in figure_positions if not fp[1]]
 
@@ -165,7 +178,7 @@ for ch_name, ch_h in chapters:
         ch1_h = ch_h
         break
 
-ch1_h3s = [(h[1], h[2]) for h in ch1_h if h[0] == 'h3']
+ch1_h3s = [(h[1], h[2]) for h in ch1_h if h[0] == 'h3'] if ch1_h else []
 h3_14 = [(text, line) for text, line in ch1_h3s if text.startswith('1.4')]
 print("=== Chapter 1 H3s under section 1.4 ===")
 for text, line in h3_14:
@@ -181,7 +194,7 @@ print("\n" + "="*70)
 print("STRUCTURAL AUDIT RESULTS")
 print("="*70)
 print(f"\nTotal issues found: {len(issues)}")
-print(f"Orphan figures (no preceding h3 within 50 lines): {len(orphan_figures)}")
+print(f"Orphan figures (no preceding h2/h3/h4 within 200 lines): {len(orphan_figures)}")
 
 if issues:
     print("\n--- ISSUES BY CHAPTER ---")

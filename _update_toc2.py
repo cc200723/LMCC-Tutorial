@@ -1,6 +1,8 @@
 import re
+from pathlib import Path
 
-html_path = r"C:\Users\MINXIN\Desktop\CCF LMCC\LMCC青少年组教材-增强版.html"
+# 教材与脚本同目录；按脚本位置推导，避免硬编码本机绝对路径。
+html_path = str(Path(__file__).resolve().parent / "LMCC青少年组教材-增强版.html")
 
 with open(html_path, "r", encoding="utf-8") as f:
     html = f.read()
@@ -12,8 +14,8 @@ with open(html_path, "r", encoding="utf-8") as f:
 
 # Pattern for h1 with id
 h1_pattern = r'<h1\s+id="([^"]+)"[^>]*>(.+?)</h1>'
-# Pattern for h2 (no id needed)
-h2_pattern = r'<h2>(.+?)</h2>'
+# Pattern for h2 (no id needed; 兼容带属性写法如 <h2 id="...">)
+h2_pattern = r'<h2\b[^>]*>(.+?)</h2>'
 
 # Build TOC entries: list of (level, href, text)
 entries = []
